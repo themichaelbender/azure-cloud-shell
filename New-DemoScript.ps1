@@ -96,8 +96,11 @@ T#This set of demos covers remoting into VMs in Azure.
   cd $home/clouddrive
   mkdir github
   cd ./github
+  git config --global user.email "mbender@tailwindtraders.net"
+  git config --global user.name "mbender"
   git clone https://github.com/themichaelbender-ms/azure-cloud-shell.git
   dir
+
 # Set remote url to repository; SSH must be created and stored
   cd ./azure-cloud-shell
   git remote set-url origin git@github.com:themichaelbender-ms/azure-cloud-shell.git
