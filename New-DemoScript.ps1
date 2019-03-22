@@ -92,6 +92,12 @@ T#This set of demos covers remoting into VMs in Azure.
 
   get-azResource -ResourceGroupName 'cloudshell-demo-bender' | Format-Table
 
+    # Take 2
+    New-AzResourceGroup -Name 'cloudshell-demo-bender2' -location 'westeurope'
+
+    get-azResource -ResourceGroupName 'cloudshell-demo-bender2'
+  
+    New-AzureRmResourceGroupDeployment -Name 'cloudshell-demo-deploy2' -ResourceGroupName 'cloudshell-demo-bender2' -TemplateUri https://github.com/themichaelbender-ms/azure-cloud-shell/blob/master/Scripts/ExportedTemplate-azure-cloudshell-demo-linux/template.json
 #Setting up GIT
   cd $home/clouddrive
   mkdir github
