@@ -1,6 +1,6 @@
 
 ## Pre-Reqs
-[Azure Subscrition](https://azure.microsoft.com/en-us/free/?WT.mc_id=MSIgniteTheTour-github-mibender)
+[Azure Subscription](https://azure.microsoft.com/en-us/free/?WT.mc_id=MSIgniteTheTour-github-mibender)
 
 Deploy Windows VM
 Deploy Linux VM
@@ -8,8 +8,7 @@ Azure Account extension
 Node.js install
 
 #Region - Demo 1 - Exploring the Shell
-This series of demos includes the setup, configuration, and exploration of Azure Cloud Shell. 
-
+# This series of demos includes the setup, configuration, and exploration of Azure Cloud Shell. 
   dir
   cd mibender
   cd ./VirtualMachines/
@@ -19,7 +18,7 @@ This series of demos includes the setup, configuration, and exploration of Azure
   (get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile).ImageReference
   get-command get-AzVM*
   get-command *AzureAD* | more
-  Get-AzureADUser
+  #Get-AzureADUser
   cd $Home
   dir
   cd clouddrive
@@ -28,52 +27,55 @@ This series of demos includes the setup, configuration, and exploration of Azure
   cd DemoDirectory
   dir
   code
+
+  #Install tools from PowerShell Gallery
+  Install-Module PSTeachingTools
+  get-command -module PSTeachingTools
 #Endregion
 
-## Demo 2 -Working with Visual Studio Code
+#Region - Demo 2 -Working with Visual Studio Code
 ctrl+shift+P to drop command pallette
 Azure: Open Cloud Shell in VS Code
+#Endregion
 
 #Region -Demo 3 - Remoting into VMs
-This set of demos covers remoting into VMs in Azure.
+T#This set of demos covers remoting into VMs in Azure.
+  # View commands in Azure Cloud Shell for Remoting
+  gcm *azVMPS*, Invoke-AzVMc*,Enter-AzVm*
 
-```PowerShell
-# View commands in Azure Cloud Shell for Remoting
-gcm *azVMPS*, Invoke-AzVMc*,Enter-AzVm*
+  # confiugre SSH
 
-# confiugre SSH
+  # Generate Key
+  ssh-keygen -t rsa -b 2048
+  # Verify Key
+  cat ~./ssh/isa
+  ls -al ~/.ssh
+  for reference (https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed)
+  # Variables
+  $win = 'vm-win-01'
+  $lnx = 'vm-linux-01'
+  $rsg = 'azure-cloudshell-demo'
+  $cred = get-credential
 
-# Generate Key
-ssh-keygen -t rsa -b 2048
-# Verify Key
-cat ~./ssh/isa
-ls -al ~/.ssh
-for reference (https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed)
-# Variables
-$win = 'vm-win-01'
-$lnx = 'vm-linux-01'
-$rsg = 'azure-cloudshell-demo'
-$cred = get-credential
+  # Windows VM
+  Enable-AzVMPSRemoting -Name $win -ResourceGroupName $rsg -Protocol https -OsType Windows
 
-# Windows VM
-Enable-AzVMPSRemoting -Name $win -ResourceGroupName $rsg -Protocol https -OsType Windows
+  # Linux VM
+  Enable-AzVMPSRemoting -Name $lnx -ResourceGroupName $rsg -Protocol ssh -OsType Linux
 
-# Linux VM
-Enable-AzVMPSRemoting -Name $lnx -ResourceGroupName $rsg -Protocol ssh -OsType Linux
+  # Fan Out to VMs
+  # Windows VM
+  Invoke-AzVMCommand -Name $win -ResourceGroupName $rsg -ScriptBlock {get-service win*} -Credential $cred
 
-# Fan Out to VMs
-# Windows VM
-Invoke-AzVMCommand -Name $win -ResourceGroupName $rsg -ScriptBlock {get-service win*} -Credential $cred
+  # Linux VM - display current software and hardware information with uname
+  Invoke-AzVMCommand -Name $lnx -ResourceGroupName $rsg -ScriptBlock {uname -a} -UserName michael -KeyFilePath /home/michael/.ssh/id_rsa
 
-# Linux VM - display current software and hardware information with uname
-Invoke-AzVMCommand -Name $lnx -ResourceGroupName $rsg -ScriptBlock {uname -a} -UserName michael -KeyFilePath /home/michael/.ssh/id_rsa
+  # Connect to VM with Remoting
 
-# Connect to VM with Remoting
-
-Enter-AzVM -name $win -ResourceGroupName $rsg -Credential $cred
-whoami
-get-service win*
-exit
+  Enter-AzVM -name $win -ResourceGroupName $rsg -Credential $cred
+  whoami
+  get-service win*
+  exit
 
 #Endregion
 
