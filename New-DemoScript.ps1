@@ -4,46 +4,55 @@
 
 Deploy Windows VM
 Deploy Linux VM
+Azure Account extension
+Node.js install
 
-## Demo 1 - Exploring the Shell
+#Region - Demo 1 - Exploring the Shell
 This series of demos includes the setup, configuration, and exploration of Azure Cloud Shell. 
 
-dir
-cd mibender
-cd ./VirtualMachines/
-dir
-get-AzVm -name vm-linux-01 | fl
-get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile
-(get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile).ImageReference
-15 get-command get-AzVM*
-18 get-command *AzureAD* | more
-19 Get-AzureADUser
-20 cd $Home
-21 dir
-22 cd windows azure powershell
-23 cd 'windows azure powershell'
-24 cd clouddrive
-25 dir
-26 mkdir DemoDirectory
-27 cd DemoDirectory
-28 dir
-29 code
-```PowerShell
+  dir
+  cd mibender
+  cd ./VirtualMachines/
+  dir
+  get-AzVm -name vm-linux-01 | fl
+  get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile
+  (get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile).ImageReference
+  get-command get-AzVM*
+  get-command *AzureAD* | more
+  Get-AzureADUser
+  cd $Home
+  dir
+  cd clouddrive
+  dir
+  mkdir DemoDirectory
+  cd DemoDirectory
+  dir
+  code
+#Endregion
 
-```
 ## Demo 2 -Working with Visual Studio Code
+ctrl+shift+P to drop command pallette
+Azure: Open Cloud Shell in VS Code
 
-## Demo 3 - Remoting into VMs
+#Region -Demo 3 - Remoting into VMs
 This set of demos covers remoting into VMs in Azure.
 
 ```PowerShell
 # View commands in Azure Cloud Shell for Remoting
 gcm *azVMPS*, Invoke-AzVMc*,Enter-AzVm*
 
+# confiugre SSH
+
+# Generate Key
+ssh-keygen -t rsa -b 2048
+# Verify Key
+cat ~./ssh/isa
+ls -al ~/.ssh
+for reference (https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed)
 # Variables
-$win =
-$lnx =
-$rsg =
+$win = 'vm-win-01'
+$lnx = 'vm-linux-01'
+$rsg = 'azure-cloudshell-demo'
 $cred = get-credential
 
 # Windows VM
@@ -54,73 +63,50 @@ Enable-AzVMPSRemoting -Name $lnx -ResourceGroupName $rsg -Protocol ssh -OsType L
 
 # Fan Out to VMs
 # Windows VM
-Invoke-AzVMCommand -Name tmdemowin-01 -ResourceGroupName TM-DEMO-CLOUDSHELL-RG -ScriptBlock {get-service win*} -Credential $cred
+Invoke-AzVMCommand -Name $win -ResourceGroupName $rsg -ScriptBlock {get-service win*} -Credential $cred
 
-# Linux VM
+# Linux VM - display current software and hardware information with uname
 Invoke-AzVMCommand -Name $lnx -ResourceGroupName $rsg -ScriptBlock {uname -a} -UserName michael -KeyFilePath /home/michael/.ssh/id_rsa
 
 # Connect to VM with Remoting
 
 Enter-AzVM -name $win -ResourceGroupName $rsg -Credential $cred
 whoami
-get-service | where status -eq stopped
+get-service win*
+exit
 
-## Demo 4 - Deploying Resources and GIT
-New-AzResourceGroup -Name 'cloudshell-demo-02' -location 'westeurope'
+#Endregion
 
-get-azResource -ResourceGroupName 'cloudshell-demo-02'
+#Region - Demo 4 - Deploying Resources and GIT
+  New-AzResourceGroup -Name 'cloudshell-demo-bender' -location 'westeurope'
 
-New-AzureRmResourceGroupDeployment -Name 'cloudshell-demo' -ResourceGroupName 'cloudshell-demo-02' -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-automatic-static-ip/azuredeploy.json   -AsJob
+  get-azResource -ResourceGroupName 'cloudshell-demo-bender'
 
-get-job | format-list
+  New-AzureRmResourceGroupDeployment -Name 'cloudshell-demo-deploy' -ResourceGroupName 'cloudshell-demo-bender' -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-automatic-static-ip/azuredeploy.json 
 
-get-azResource -ResourceGroupName 'cloudshell-demo-02'
+  get-job | format-list
 
-get-azResource -ResourceGroupName 'cloudshell-demo-02' | Format-Table
+  get-azResource -ResourceGroupName 'cloudshell-demo-bender'
 
-# Setting up GIT
+  get-azResource -ResourceGroupName 'cloudshell-demo-bender' | Format-Table
 
-cd $home/clouddrive/michael/
-mkdir github
-cd ./github
-git clone <Path to repo>
+#Setting up GIT
+  cd $home/clouddrive
+  mkdir github
+  cd ./github
+  git clone https://github.com/themichaelbender-ms/azure-cloud-shell.git
+  dir
 # Set remote url to repository; SSH must be created and stored
-git remote set-url origin git@github.com:themichaelbender-ms/demos.git
-git status
-git branch
-git checkout -b demo-cs
-code ./New-DemoScript.ps1 # Create a new script, add code, and save
-git status
-git add . # Adds all changes
-git commit -m 'New Script'
-git status
-git push -u origin demo-cs
+  cd ./azure-cloud-shell
+  git remote set-url origin git@github.com:themichaelbender-ms/azure-cloud-shell.git
+  git status
+  git branch
+  git checkout -b demo-cs
+  code ./New-ServiceScript.ps1 # Create a new script, add code, and save
+  git status
+  git add . # Adds all changes
+  git commit -m 'New Script'
+  git status
+  git push -u origin demo-cs
 
-
-```
-# Extra Stuff 
-
-
-2. Use GIT to clone demo folder w/ Scripts (2)
-   1. 42 cd $Home
-  43 dir
-  44 cd ./clouddrive/
-  45 dir
-  46 mkdir github
-  47 cd ./github/
-  48 git clone https://github.com/themichaelbender-ms/demos.git
-  49 git status
-  50 dir
-  51 cd demos
-  52 git status
-  53 git branch
-  54 git checkout -b demobranch-cs
-  71 dir
-  72 cd ./demoscripts
-  73 dir
-  74 code ./get-stoppedServices.ps1
-  78 git commit -m 'Script Update' -a
- git remote set-url origin git@github.com:themichaelbender-ms/demos.git
-   79 git push -u origin demobranch-cs
-3.  Show Microsoft Learn module on X and show Azure Cloud Shell (2)
-4.  Close with Slide of iphone screen accessing cloud shell (1)
+#Endregion

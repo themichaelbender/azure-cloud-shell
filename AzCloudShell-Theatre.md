@@ -44,4 +44,7 @@ Shell with GIT already authenticated
    3. Manage File Share > Download via Azure Portal
 9.  Remote into VMs
    4. gcm *azVMPS*, Invoke-AzVMc*,Enter-AzVm*
+3.  Show Microsoft Learn module on X and show Azure Cloud Shell (2)
+4.  Close with Slide of iphone screen accessing cloud shell (1)
+Resources:
 
