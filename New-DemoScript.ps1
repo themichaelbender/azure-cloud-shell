@@ -9,33 +9,48 @@ Node.js install
 
 #Region - Demo 1 - Exploring the Shell
 # This series of demos includes the setup, configuration, and exploration of Azure Cloud Shell. 
-  dir
-  cd mibender
-  cd ./VirtualMachines/
-  dir
-  get-AzVm -name vm-linux-01 | fl
-  get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile
-  (get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile).ImageReference
-  get-command get-AzVM*
-  get-command *AzureAD* | more
-  #Get-AzureADUser
-  cd $Home
-  dir
-  cd clouddrive
-  dir
-  mkdir DemoDirectory
-  cd DemoDirectory
-  dir
-  code
+  #Initial Config
+    https://shell.azure.com 
+  #Add Storage to Subscription (Advanced)
+  
+  #Browse Resources in Shell
+    dir
+    cd mibender
+    cd ./VirtualMachines/
+    dir
+
+  #Find Commands
+    get-command get-AzVM* 
+    get-command *AzureAD* | more
+    help Get-AzVM #Rememeber :q
+    Get-AzVm
+    get-AzVm -name vm-linux-01 | FL
+    get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile
+    (get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile).ImageReference
+  
+  #Browse Cloud Drive
+    cd $Home
+    dir
+    cd clouddrive
+    dir
+    mkdir DemoDirectory
+    cd DemoDirectory
+    dir
+    code
 
   #Install tools from PowerShell Gallery
-  Install-Module PSTeachingTools
-  get-command -module PSTeachingTools
+    Install-Module PSTeachingTools
+    get-command -module PSTeachingTools
 #Endregion
 
 #Region - Demo 2 -Working with Visual Studio Code
-ctrl+shift+P to drop command pallette
-Azure: Open Cloud Shell in VS Code
+  #Walk through extensions to add
+    #PowerShell
+    #Azure Account
+      #ctrl+shift+P to drop command pallette
+      #Azure Open PowerShell in Cloud Shell
+      Get-AzVM #Run Slelected Text
+  
 #Endregion
 
 #Region -Demo 3 - Remoting into VMs
