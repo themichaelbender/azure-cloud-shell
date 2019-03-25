@@ -1,5 +1,6 @@
 ## THR2568 - Master the Cloud with Azure Cloud Shell
 
+##Note: Old code that has been moved over to New-DemoScript.ps1
 ## Code
 
 
@@ -24,8 +25,6 @@ get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile
 19 Get-AzureADUser
 20 cd $Home
 21 dir
-22 cd windows azure powershell
-23 cd 'windows azure powershell'
 24 cd clouddrive
 25 dir
 26 mkdir DemoDirectory
