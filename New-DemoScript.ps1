@@ -1,4 +1,4 @@
-
+## Added comment to script
 ## Pre-Reqs
 [Azure Subscription](https://azure.microsoft.com/en-us/free/?WT.mc_id=MSIgniteTheTour-github-mibender)
 
