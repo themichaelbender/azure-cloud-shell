@@ -1,4 +1,4 @@
-## Added comment to script
+
 ## Pre-Reqs
 [Azure Subscription](https://azure.microsoft.com/en-us/free/?WT.mc_id=MSIgniteTheTour-github-mibender)
 
@@ -11,7 +11,7 @@ Node.js install
 # This series of demos includes the setup, configuration, and exploration of Azure Cloud Shell. 
   #Initial Config
     https://shell.azure.com 
-  #Add Storage to Subscription (Advanced)
+  #Add Storage to Subscription (Advanced) 
   
   #Browse Resources in Shell
     dir
@@ -20,7 +20,7 @@ Node.js install
     dir
 
   #Find Commands
-    get-command get-AzVM*
+    get-command get-AzVM* 
     get-command *AzureAD* | more
     help Get-AzVM #Rememeber :q
     Get-AzVm
@@ -36,7 +36,8 @@ Node.js install
     mkdir DemoDirectory
     cd DemoDirectory
     dir
-  
+    #copy up script from local machine
+
   #Install tools from PowerShell Gallery
     Install-Module PSTeachingTools
     get-command -module PSTeachingTools
@@ -59,21 +60,15 @@ T#This set of demos covers remoting into VMs in Azure.
 
   # confiugre SSH
 
-  # Generate SSH Key
+  # Generate Key
   ssh-keygen -t rsa -b 2048
-
   # Verify Key
-    ls -al ~/.ssh
-    cat ~/.ssh/id_rsa.pub #List public key
-
-  # Add SSH key to linux vm
-     ssh-copy-id -i ~/.ssh/id_rsa.pub michael@vm-linux-02.westus2.cloudapp.azure.com
-
-  #  for reference (https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed)
-
+  cat ~./ssh/isa
+  ls -al ~/.ssh
+  for reference (https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed)
   # Variables
   $win = 'vm-win-01'
-  $lnx = 'vm-linux-02'
+  $lnx = 'vm-linux-01'
   $rsg = 'azure-cloudshell-demo'
   $cred = get-credential
 
@@ -83,7 +78,8 @@ T#This set of demos covers remoting into VMs in Azure.
   # Linux VM
   Enable-AzVMPSRemoting -Name $lnx -ResourceGroupName $rsg -Protocol ssh -OsType Linux
 
-  # Run command on Windows VM using Invoke-Command
+  # Fan Out to VMs
+  # Windows VM
   Invoke-AzVMCommand -Name $win -ResourceGroupName $rsg -ScriptBlock {get-service win*} -Credential $cred
 
   # Linux VM - display current software and hardware information with uname
@@ -99,23 +95,24 @@ T#This set of demos covers remoting into VMs in Azure.
 #Endregion
 
 #Region - Demo 4 - Deploying Resources and GIT
-
-
   New-AzResourceGroup -Name 'cloudshell-demo-bender' -location 'westeurope'
 
   get-azResource -ResourceGroupName 'cloudshell-demo-bender'
 
-  New-AzureRmResourceGroupDeployment -Name 'cloudshell-demo-deploy' -ResourceGroupName 'cloudshell-demo-mibender3' -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-automatic-static-ip/azuredeploy.json 
+  New-AzureRmResourceGroupDeployment -Name 'cloudshell-demo-deploy' -ResourceGroupName 'cloudshell-demo-bender' -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-automatic-static-ip/azuredeploy.json 
+
+  get-job | format-list
+
+  get-azResource -ResourceGroupName 'cloudshell-demo-bender'
 
   get-azResource -ResourceGroupName 'cloudshell-demo-bender' | Format-Table
 
     # Take 2
-    New-AzResourceGroup -Name 'cloudshell-demo-mibender3' -location 'westeurope'
+    New-AzResourceGroup -Name 'cloudshell-demo-bender2' -location 'westeurope'
 
-    get-azResource -ResourceGroupName 'cloudshell-demo-mibender3'
+    get-azResource -ResourceGroupName 'cloudshell-demo-bender2'
   
-    New-AzureRmResourceGroupDeployment -Name 'cloudshell-demo-deploy2' -ResourceGroupName 'cloudshell-demo-mibender3' -TemplateUri https://github.com/themichaelbender-ms/azure-cloud-shell/blob/master/Scripts/ExportedTemplate-azure-cloudshell-demo-linux/template.json
-
+    New-AzureRmResourceGroupDeployment -Name 'cloudshell-demo-deploy2' -ResourceGroupName 'cloudshell-demo-bender2' -TemplateUri https://github.com/themichaelbender-ms/azure-cloud-shell/blob/master/Scripts/ExportedTemplate-azure-cloudshell-demo-linux/template.json
 #Setting up GIT
   cd $home/clouddrive
   mkdir github
