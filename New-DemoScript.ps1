@@ -18,6 +18,17 @@ Node.js install
     cd mibender
     cd ./VirtualMachines/
     dir
+  cls
+
+      #Browse Cloud Drive
+      cd $Home
+      dir
+      cd clouddrive
+      dir
+      mkdir DemoDirectory
+      cd DemoDirectory
+      dir
+      cls
 
   #Find Commands
     get-command get-AzVM*
@@ -27,18 +38,11 @@ Node.js install
     get-AzVm -name vm-linux-01 | FL
     get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile
     (get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile).ImageReference
-  
-  #Browse Cloud Drive
-    cd $Home
-    dir
-    cd clouddrive
-    dir
-    mkdir DemoDirectory
-    cd DemoDirectory
-    dir
+    cls
   
   #Install tools from PowerShell Gallery
     Install-Module PSTeachingTools
+    Import-Module PSTeachingTools
     get-command -module PSTeachingTools
 #Endregion
 
@@ -100,21 +104,13 @@ T#This set of demos covers remoting into VMs in Azure.
 
 #Region - Demo 4 - Deploying Resources and GIT
 
+  New-AzResourceGroup -Name 'cloudshell-demo-michael' -location 'westeurope'
 
-  New-AzResourceGroup -Name 'cloudshell-demo-bender' -location 'westeurope'
+  get-azResource -ResourceGroupName 'cloudshell-demo-michael'
 
-  get-azResource -ResourceGroupName 'cloudshell-demo-bender'
+  a -Name 'cloudshell-demo-deploy' -ResourceGroupName 'cloudshell-demo-michael' -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-automatic-static-ip/azuredeploy.json -Force
 
-  New-AzureRmResourceGroupDeployment -Name 'cloudshell-demo-deploy' -ResourceGroupName 'cloudshell-demo-mibender3' -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-automatic-static-ip/azuredeploy.json 
-
-  get-azResource -ResourceGroupName 'cloudshell-demo-bender' | Format-Table
-
-    # Take 2
-    New-AzResourceGroup -Name 'cloudshell-demo-mibender3' -location 'westeurope'
-
-    get-azResource -ResourceGroupName 'cloudshell-demo-mibender3'
-  
-    New-AzureRmResourceGroupDeployment -Name 'cloudshell-demo-deploy2' -ResourceGroupName 'cloudshell-demo-mibender3' -TemplateUri https://github.com/themichaelbender-ms/azure-cloud-shell/blob/master/Scripts/ExportedTemplate-azure-cloudshell-demo-linux/template.json
+  get-azResource -ResourceGroupName 'cloudshell-demo-michael' | Format-Table
 
 #Setting up GIT
   cd $home/clouddrive
