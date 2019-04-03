@@ -1,0 +1,14 @@
+  #Browse Resources in Shell
+    dir
+    cd mibender
+    cd ./VirtualMachines/
+    dir
+
+  #Find Commands
+    get-command get-AzVM*
+    get-command *AzureAD* | more
+    help Get-AzVM #Rememeber :q
+    Get-AzVm
+    get-AzVm -name vm-linux-01 | FL
+    get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile
+    (get-AzVm -name vm-linux-01 | select -ExpandProperty StorageProfile).ImageReference
