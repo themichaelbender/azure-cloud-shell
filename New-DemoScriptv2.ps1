@@ -153,7 +153,19 @@ Node.js install
 
     terraform apply plan.out
 
-    terraform destroy -auto-approve
+    #Add Additional Components to main.tf
+    terraform plan --out plan.out
+    terraform apply plan.out
+
+    #OPen Webpage with FQDN
+
+    #Verify Resources
+    Get-AzResourceGroup -Name 'vote-resource-group'
+    
+    get-azResource -ResourceGroupName 'vote-resource-group' | ft
+
+  #Remove Resources
+  terraform destroy -auto-approve
   #Endregion
 #Endregion
 
