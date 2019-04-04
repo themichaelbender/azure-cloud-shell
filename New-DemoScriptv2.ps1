@@ -1,14 +1,5 @@
 # Demo Instructions
 
-
-## Pre-Reqs
-[Azure Subscription](https://azure.microsoft.com/en-us/free/?WT.mc_id=MSIgniteTheTour-github-mibender)
-
-Deploy Windows VM
-Deploy Linux VM
-Azure Account extension
-Node.js install
-
 #Region - Demo 1 - Exploring the Shell
 # This series of demos includes the setup, configuration, and exploration of Azure Cloud Shell. 
   #Initial Config
@@ -170,7 +161,9 @@ Node.js install
 #Endregion
 
 #Region Demo 4 - Access Cloud Shell from everywhere
-
+  # Walk through Cloud Shell in Docs
+  # Walk through Cloud Shell in Learn
+  # Show demo of Cloud Shell from mobile device using Azure App
 #Endregion
 
 

@@ -2,19 +2,27 @@
 
 You already know PowerShell is the key to on-premises workloads. Now take the power of the shell into the Cloud with Azure Cloud Shell. This demo-packed session will introduce you to Azure Cloud Shell, and provide plenty of tips to be immediately effective in using the command line to manage your Azure resources from anywhere.
 
-## Demo Pre-Reqs
-[Azure Subscription](https://azure.microsoft.com/en-us/free/?WT.mc_id=MSIgniteTheTour-github-mibender)
-
-Deployed Windows VM
-Deployed Linux VM
-[Deploy with Azure link]()
-Azure Account extension
-Node.js install
-
-
-Shell with GIT already authenticated
 ## Demos
 
+All of the demos for this presentation can be completed in your own Azure Subscription using Azure Cloud Shell. The only requirements are a few virtual machines that you can deployed with instructions below.
+
+[Don't have an Azure Subscription? Get a free trial here](https://azure.microsoft.com/en-us/free/?WT.mc_id=MSIgniteTheTour-github-mibender)
+
+## Demo Pre-Reqs
+
+- Microsoft Azure Subscription
+- Deployed Linux VM
+- Deployed Windows VM
+- Visual Studio Code - [Download VS Code]()
+- Visual Studio Code Extensions
+  - PowerShell
+  - Azure Account
+
+Node.js install
+
+### Deploy Virtual Machines
+
+### Demo Steps
 1. Intro to cloud shell (2)
    1. Marketing Slides
 2. Where is Cloud Shell Available?
