@@ -11,6 +11,7 @@
     cd mibender
     cd ./VirtualMachines/
     dir
+    get-AzVm -Name 'vm-win-01'
   cls
 
       #Browse Cloud Drive
@@ -24,6 +25,7 @@
       cls
 
   #Find Commands
+    get-command -module PSCloudShellUtility
     get-command get-AzVM*
     get-command *AzureAD* | more
     help Get-AzVM #Rememeber :q
@@ -80,7 +82,7 @@
       # Connect to VM with Remoting
 
       Enter-AzVM -name $win -ResourceGroupName $rsg -Credential $cred
-      whoami
+      $hostname
       get-service win*
       exit
   #Endregion - VM Remoting

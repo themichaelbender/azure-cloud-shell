@@ -1,0 +1,93 @@
+##############################################
+  ##### Finding Commands
+  ##############################################
+      get-command -module PSCloudShellUtility
+      get-command -module Az
+      get-command *AzureAD* | more
+      help Get-AzVM #Rememeber :qP
+      Get-AzVm
+      Get-AzVm -ResourceGroupName 'azure-cloudshell-demo'
+      Get-AzVm -name *lin*
+      get-AzVm -name vm-linux-01 | FL
+      cls
+    
+  ##############################################
+  ##### Azure Drive
+  ##############################################
+      #Browse Resources in Shell
+      Get-PSDrive  
+      dir
+      cd mibender
+      cd ./VirtualMachines/
+      dir
+      get-AzVm -Name 'vm-win-01'
+      #Note that no resource group required when in Azure Drive
+      cd Azure:
+      cls
+
+  ##############################################
+  ##### Azure Cloud Shell Persistent Storage
+  ##############################################
+    $Home
+    cd $HOME
+    Get-command *clouddrive*
+    clouddrive
+    Get-CloudDrive
+    cd $Home
+    dir
+    cd clouddrive
+    mkdir Scripts
+    cd Scripts
+    dir
+    cls
+
+  ##############################################
+  ##### File Management
+  ##############################################
+    #Upload and Download Files in the UI & Portal
+    #Add ./get-servicestatus.ps1 to Scripts
+    Export-file ./get-servicestatus.ps1
+ 
+  ##############################################
+  ##### Editors
+  ##############################################
+    get-command vi,nano,emacs
+    cd $HOME
+    cd cloudshell 
+    cd scripts
+    code New-WinVM.ps1
+    cls
+
+  ##############################################
+  ##### Cloud Shell Tools
+  ##############################################
+    #explore and Install tools from PowerShell Gallery
+    Get-Module -ListAvailable
+    Find-Module -name *SQL*
+    Install-Module PSTeachingTools
+    Import-Module PSTeachingTools
+    get-command -module PSTeachingTools
+    cls
+
+
+  ##############################################
+  ##### Terraform
+  ##############################################
+cd $home
+      code ./main.tf 
+      
+      terraform init 
+  
+      terraform plan --out plan.out
+  
+      terraform apply plan.out
+  
+      #OPen Webpage with FQDN
+  
+      #Verify Resources
+      Get-AzResourceGroup -Name 'vote-resource-group'
+      
+      get-azResource -ResourceGroupName 'vote-resource-group' | ft
+  
+       #Remove Resources
+       terraform destroy -auto-approve
