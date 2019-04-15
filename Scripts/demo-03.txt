@@ -1,0 +1,55 @@
+##############################################
+  ##### Azure VM Remoting Demo
+  ##############################################  
+  #This set of demos covers remoting into VMs in Azure.
+
+    #View commands in Azure Cloud Shell for Remoting
+      gcm *azVMPS*, Invoke-AzVMc*,Enter-AzVm*
+      
+      #Show SSH to linux VM in Azure Portal
+      
+      #confiugre SSH
+
+      #Generate SSH Key
+      ssh-keygen -t rsa -b 2048
+
+      #Verify Key
+        ls -al ~/.ssh
+        cat ~/.ssh/id_rsa.pub #List public key
+
+      #Add SSH key to linux vm
+        ssh-copy-id -i ~/.ssh/id_rsa.pub michael@vm-linux-02.westus2.cloudapp.azure.com
+
+      #  for reference (https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed)
+
+      #Enable Azure PSremoting
+      # Variables
+      $win = 'vm-win-01'
+      $lnx = 'vm-linux-02'
+      $rsg = 'azure-cloudshell-demo'
+      $cred = get-credential
+
+      # Windows VM
+      Enable-AzVMPSRemoting -Name $win -ResourceGroupName $rsg -Protocol https -OsType Windows
+
+      # Linux VM
+      Enable-AzVMPSRemoting -Name $lnx -ResourceGroupName $rsg -Protocol ssh -OsType Linux
+
+      # Run command on Windows VM using Invoke-Command
+      Invoke-AzVMCommand -Name $win -ResourceGroupName $rsg -ScriptBlock {get-service win*} -Credential $cred
+
+      # Linux VM - display current software and hardware information with uname
+      Invoke-AzVMCommand -Name $lnx -ResourceGroupName $rsg -ScriptBlock {uname -a} -UserName michael -KeyFilePath /home/michael/.ssh/id_rsa
+
+      # Connect to VM with Remoting
+
+      Enter-AzVM -name $win -ResourceGroupName $rsg -Credential $cred
+      $hostname
+      get-service win*
+      exit
+
+      #Disable Azure PSRemoting
+      Disable-AzVMPSRemoting -name $win -ResourceGroupName $rsg
+      Disable-AzVMPSRemoting -name $lnx -ResourceGroupName $rsg
+      Enter-AzVM -name $win -ResourceGroupName $rsg -Credential $cred
+      cls
