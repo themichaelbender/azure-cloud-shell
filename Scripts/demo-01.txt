@@ -2,7 +2,7 @@
   ##### Finding Commands
   ##############################################
       get-command -module PSCloudShellUtility
-      get-command -module Az
+      get-command -module Az*
       get-command *AzureAD* | more
       help Get-AzVM #Rememeber :qP
       Get-AzVm
