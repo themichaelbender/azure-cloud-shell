@@ -17,10 +17,8 @@ All of the demos for this presentation can be completed in your own Azure Subscr
   - PowerShell
   - Azure Account
 
-### Deploy Virtual Machines
-
 ### Presentation Demos
-** Note:Due to the live nature of demos, some commands may differ slightly from what is in this repository. **
+**Note: Due to the live nature of demos, some commands may differ slightly from what is in this repository.**
 
 #### Demo 1 - Exploring the Shell
 
@@ -66,3 +64,8 @@ This demo ([demo-06.txt](https://github.com/themichaelbender-ms/azure-cloud-shel
 
 [Create a Terraform configuration for Azure](https://docs.microsoft.com/azure/terraform/terrafom-quickstart/?WT.mc_id=cloudshell-github-mibender)
 
+### Feedback
+
+I'm always looking for feedback on ways to make my presentations better. If you have a suggestion or comment, please use the [Issues Page](https://github.com/themichaelbender-ms/azure-cloud-shell/issues) in Github, or feel free to fork the repository & issue a pull request.
+
+Feel free to reach me on Twitter via [@MichaelBender](https://twitter.com/michaelbender)
