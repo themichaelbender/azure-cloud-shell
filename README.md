@@ -6,12 +6,13 @@ You already know PowerShell is the key to on-premises workloads. Now take the po
 
 All of the demos for this presentation can be completed in your own Azure Subscription using Azure Cloud Shell. The only requirements are a few virtual machines that you can deployed with instructions below.
 
+[Don't have an Azure Subscription? Get a free trial here](https://azure.microsoft.com/en-us/free/?WT.mc_id=cloudshell-github-mibender)
+
 ## Demo Pre-Requisites
 
 - Microsoft Azure Subscription
-  - [Don't have an Azure Subscription? Get a free trial here](https://azure.microsoft.com/en-us/free/?WT.mc_id=cloudshell-github-mibender)
-- Deployed Linux VM
-- Deployed Windows VM
+- Deployed Linux VM in Azure - [Instructions](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-powershell/?WT.mc_id=cloudshell-github-mibender)
+- Deployed Windows VM in Azure - [Instructions](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-powershell/?WT.mc_id=cloudshell-github-mibender)
 - Visual Studio Code - [Download VS Code](https://code.visualstudio.com/Download/?WT.mc_id=cloudshell-github-mibender)
 - Visual Studio Code Extensions
   - PowerShell
