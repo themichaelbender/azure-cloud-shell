@@ -1,5 +1,5 @@
 ##### Azure VM Remoting Demo
-  ##############################################  
+##############################################  
   #This set of demos covers remoting into VMs in Azure.
 
     #View commands in Azure Cloud Shell for Remoting
