@@ -45,7 +45,6 @@ This demo ([demo-03.txt](https://github.com/themichaelbender-ms/azure-cloud-shel
 
 This demo ([demo-04.txt](https://github.com/themichaelbender-ms/azure-cloud-shell/blob/master/Scripts/demo-code/demo-4.txt))walks through deploying a Terraform configuration in Azure based on [Create a Terraform configuration for Azure](https://docs.microsoft.com/azure/terraform/terrafom-quickstart/?WT.mc_id=cloudshell-github-mibender) at docs.microsoft.com.
 
-
 #### Demo 5 - Access Cloud Shell from everywhere
 
 This set of demos covers using Cloud Shell in
