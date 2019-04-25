@@ -19,6 +19,7 @@ All of the demos for this presentation can be completed in your own Azure Subscr
   - Azure Account
 
 ### Presentation Demos
+
 **Note: Due to the live nature of demos, some commands may differ slightly from what is in this repository.**
 
 [Want to watch the demos again? Here's the playlist on YouTube](https://www.youtube.com/playlist?list=PLA20gI1qp8YFk6peKW9M3v4_Be5t1Gw90)
