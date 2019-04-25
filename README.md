@@ -21,9 +21,12 @@ All of the demos for this presentation can be completed in your own Azure Subscr
 ### Presentation Demos
 **Note: Due to the live nature of demos, some commands may differ slightly from what is in this repository.**
 
+[Want to watch the demos again? Here's the playlist on YouTube](https://www.youtube.com/playlist?list=PLA20gI1qp8YFk6peKW9M3v4_Be5t1Gw90)
+
 #### Demo 1 - Exploring the Shell
 
 This set of demos ([demo-01.txt](https://github.com/themichaelbender-ms/azure-cloud-shell/blob/master/Scripts/demo-code/demo-01.txt)) covers
+
 - Initial configuration of Azure Cloud Shell
 - Walk through of shell toolbar
 - Finding commands in the shell
