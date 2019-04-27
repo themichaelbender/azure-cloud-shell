@@ -1,2 +1,3 @@
-#This is another new script
-Get-AzResourceGroup
+#New Script
+#Another Update
+Get-AzVm | format-Table
