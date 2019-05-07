@@ -1,0 +1,2 @@
+#New Script
+Get-AzVm
