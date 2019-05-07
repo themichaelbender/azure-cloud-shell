@@ -38,11 +38,11 @@
         git branch
         git checkout -b demo-cs
         cd ./scripts
-        code ./New-testScript.ps1 # Create a new script, add code, and save Ctrl+S Ctrl+Q
+        code ./New-testScriptv2.ps1 
         code ./New-ServiceScript.ps1 #Update Script
         cls
         git status
-        git add . 
+        git add ./New-TestScriptv2.ps1
         git commit -a -m 'New Script and Update'
         git status
         git push -u origin demo-cs

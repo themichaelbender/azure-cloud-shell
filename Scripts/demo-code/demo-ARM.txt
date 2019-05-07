@@ -6,6 +6,5 @@
     New-AzResourceGroupDeployment -Name 'cloudshell-demo-deploy' -ResourceGroupName 'cloudshell-demo-michael' -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-automatic-static-ip/azuredeploy.json -Verbose
 
     get-azResource -ResourceGroupName 'cloudshell-demo-michael' | Format-Table
-    #Endregion - Deployment from Github
-
+    
     cls

@@ -3,8 +3,8 @@
   ##############################################
       get-command -module PSCloudShellUtility
       get-command -module Az*
-      get-command *AzureAD* | more
-      help Get-AzVM #Rememeber :qP
+      get-command *AzureAD* 
+      help Get-AzVM 
       Get-AzVm
       Get-AzVm -ResourceGroupName 'azure-cloudshell-demo'
       Get-AzVm -name *lin*
@@ -15,13 +15,14 @@
   ##### Azure Drive
   ##############################################
       #Browse Resources in Shell
+      
       Get-PSDrive  
       dir
       cd mibender
+      dir
       cd ./VirtualMachines/
       dir
       get-AzVm -Name 'vm-win-01'
-      #Note that no resource group required when in Azure Drive
       cd Azure:
       cls
 
