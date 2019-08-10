@@ -24,7 +24,7 @@ All of the demos for this presentation can be completed in your own Azure Subscr
 
 [Want to watch the demos again? Here's the playlist on YouTube](https://www.youtube.com/playlist?list=PLA20gI1qp8YFk6peKW9M3v4_Be5t1Gw90)
 
-#### Demo 1 - Exploring the Shell
+#### Demo - Exploring the Shell
 
 This set of demos ([demo-01.txt](https://github.com/themichaelbender/azure-cloud-shell/blob/master/Scripts/demo-code/demo-01.txt)) covers
 
@@ -33,32 +33,46 @@ This set of demos ([demo-01.txt](https://github.com/themichaelbender/azure-cloud
 - Finding commands in the shell
 - Working with Azure Drive
 - Working with CloudDrive 
-  
-#### Demo 2 - Cloud Shell Tools and VS Code Integration
 
-This set of demos ([demo-02.txt](https://github.com/themichaelbender/azure-cloud-shell/blob/master/Scripts/demo-code/demo-02.txt)) covers
+[Video Link](https://youtu.be/AxgNyDKM3z4)
+  
+#### Demo - Cloud Shell Tools and VS Code Integration
+
+This set of demos ([demo-02.txt](https://github.com/themichaelbender/azure-cloud-shell/blob/master/Scripts/demo-code/demo-02.txt)) covers. 
 - File management
 - Working with editors including Code
 - Viewing and adding tools
+
+[Video Link](https://youtu.be/uHEjVWBLxm0)
   
-#### Demo 3 - VM Remoting and Management
+#### Demo - VM Remoting and Management
 
 This demo ([demo-03.txt](https://github.com/themichaelbender/azure-cloud-shell/blob/master/Scripts/demo-code/demo-03.txt)) covers remoting into & managing VMs in Azure with Azure Cloud Shell.
 
-#### Demo 4 - Deploy Infrastructure as Code using Terraform from Docs
+[Video Link]( https://youtu.be/BnlCokgskZs)
+
+#### Demo - Deploy Infrastructure as Code using Terraform from Docs
 
 This demo ([demo-04.txt](https://github.com/themichaelbender/azure-cloud-shell/blob/master/Scripts/demo-code/demo-4.txt))walks through deploying a Terraform configuration in Azure based on [Create a Terraform configuration for Azure](https://docs.microsoft.com/azure/terraform/terrafom-quickstart/?WT.mc_id=cloudshell-github-mibender) at docs.microsoft.com.
 
-#### Demo 5 - Access Cloud Shell from everywhere
+[Video Link](https://youtu.be/CVbDg8ht5cw)
+
+#### Demo - Access Cloud Shell from everywhere
 
 This set of demos covers using Cloud Shell in
 - Docs.microsoft.com
 - Microsoft Learn
 - Azure App for iOS and Android
-- 
-#### Demo 6 - GIT Source Control and Github Integration - (Optional)
+
+[Video Link](https://youtu.be/tgcMGsAa7mY)
+
+#### Demo - GIT Source Control and Github Integration - 
 
 This demo ([demo-06.txt](https://github.com/themichaelbender/azure-cloud-shell/blob/master/Scripts/demo-code/demo-06.txt)) covers deploying resources from a Github repo, and walks through using a github repo in Azure Cloud Shell.
+
+#### Demo - Working with Exchange Online Cmdlets - 
+
+This demo ([demo-07.txt](https://github.com/themichaelbender/azure-cloud-shell/blob/master/Scripts/demo-code/demo-06.txt)) covers working with the Exchange Online cmdlets in Office 365 with Azure Cloud Shell.
 
 ### Resources
 
