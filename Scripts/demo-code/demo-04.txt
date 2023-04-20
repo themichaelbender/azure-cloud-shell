@@ -16,16 +16,19 @@
         ls -al ~/.ssh
         cat ~/.ssh/id_rsa.pub #List public key
 
-      #Add SSH key to linux vm
-        ssh-copy-id -i ~/.ssh/id_rsa.pub michael@vm-linux-02.westus2.cloudapp.azure.com
+      # Build Linux VM with key
+      az vm create --resource-group 'rg-summit-prod-westus' --name 'lvm-summit-prod-westus-003' --image Ubuntu2204 --admin-username azureuser --ssh-key-value ~/.ssh/id_rsa.pub --public-ip-address ""
+      
+      #Connect to linux vm
+      ssh -i ~/.ssh/id_rsa azureuser@10.0.0.8
 
       #  for reference (https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed)
 
       #Enable Azure PSremoting
       # Variables
-      $win = 'vm-win-01'
-      $lnx = 'vm-linux-02'
-      $rsg = 'azure-cloudshell-demo'
+      $win = 'wvm-summit-prod-westus-001'
+      $lnx = 'vm-summit-prod-westus-001'
+      $rsg = 'rg-summit-prod-westus'
       $cred = get-credential
 
       # Windows VM
