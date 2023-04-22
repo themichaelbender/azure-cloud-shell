@@ -1,2 +1,1 @@
-#This is a new script
-Get-AzVm | FL
+Get-AzVM -ResourceGroupName "myDemoRG"
