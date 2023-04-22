@@ -1,0 +1,16 @@
+# Using Azure Cloud Shell at Microsoft Learn
+
+## Docs Quickstart
+[Quickstart: Use Azure CLI to create a virtual network](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-cli)
+
+## Training Guide
+
+[https://learn.microsoft.com/en-us/training/modules/hub-and-spoke-network-architecture/4-exercise-implement-hub-spoke](https://learn.microsoft.com/en-us/training/modules/hub-and-spoke-network-architecture/4-exercise-implement-hub-spoke)
+
+## Azure Architecture Center
+
+[Hub-spoke network topology in Azure](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=powershell)
+
+## Code Samples
+
+[Secure hybrid network](https://learn.microsoft.com/en-us/samples/mspnp/samples/secure-hybrid-network/)
