@@ -1,1 +1,0 @@
-Get-AzVM -ResourceGroupName "myDemoRG"

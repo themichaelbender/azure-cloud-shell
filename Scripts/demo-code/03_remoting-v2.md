@@ -13,17 +13,4 @@ Invoke-AzVMRunCommand -ResourceGroupName 'myResourceGroup' -VMName 'myVM2' -Comm
 
 Get-AzPublicIpAddress -Name 'myVM2-ip' -ResourceGroupName myResourceGroup | select "IpAddress"
 
-Invoke-AzVMRunCommand -ResourceGroupName 'myResourceGroup' -VMName 'myWinVM1' -CommandID 'RunPowerShellScript' -ScriptString "Get-Service -Name *WIN*"
-
-Enable-AzVMPSRemoting -name 'myWinVM1' -ResourceGroupName 'myResourceGroup' -Protocol https,ssh -OsType Windows
-
-Enter-AzVM -name 'myVM2' -ResourceGroupName 'myResourceGroup' -localuser azureuser
-      >$hostname
-      >get-service win*
-      >exit
-
 Invoke-AzVMRunCommand -ResourceGroupName 'myResourceGroup' -Name 'myVM' -CommandId 'RunShellScript' -ScriptString 'uname -a' -verbose
-
-Get-AzPublicIpAddress -Name 'myPubIP' -ResourceGroupName myResourceGroup | select "IpAddress"
-
-ssh -i ~/.ssh/1682174850 azureuser@192.168.1.4

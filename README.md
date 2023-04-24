@@ -2,18 +2,21 @@
 
 You already know PowerShell is the key to on-premises workloads. Now take the power of the shell into the Cloud with Azure Cloud Shell. This demo-packed session will introduce you to Azure Cloud Shell, and provide plenty of tips to be immediately effective in using the command line to manage your Azure resources from anywhere.
 
+**Note for PowerShell+DevOps Summit 2023 Attendees**
+This will be updated in the near future to match the talk given at Summit this year. Stay Tuned!
+
 ## Demos
 
 All of the demos for this presentation can be completed in your own Azure Subscription using Azure Cloud Shell. The only requirements are a few virtual machines that you can deployed with instructions below.
 
-[Don't have an Azure Subscription? Get a free trial here](https://azure.microsoft.com/en-us/free/?WT.mc_id=cloudshell-github-mibender)
+[Don't have an Azure Subscription? Get a free trial here](https://azure.microsoft.com/en-us/free/?wt.mc_id=aznetdocs_pssummit_inperson_cnl_csainfra)
 
 ## Demo Pre-Requisites
 
 - Microsoft Azure Subscription
-- Deployed Linux VM in Azure - [Instructions](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-powershell/?WT.mc_id=cloudshell-github-mibender)
-- Deployed Windows VM in Azure - [Instructions](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-powershell/?WT.mc_id=cloudshell-github-mibender)
-- Visual Studio Code - [Download VS Code](https://code.visualstudio.com/Download/?WT.mc_id=cloudshell-github-mibender)
+- Deployed Linux VM in Azure - [Instructions](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-powershell/?wt.mc_id=aznetdocs_pssummit_inperson_cnl_csainfra)
+- Deployed Windows VM in Azure - [Instructions](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-powershell/?wt.mc_id=aznetdocs_pssummit_inperson_cnl_csainfra)
+- Visual Studio Code - [Download VS Code](https://code.visualstudio.com/Download/?wt.mc_id=aznetdocs_pssummit_inperson_cnl_csainfra)
 - Visual Studio Code Extensions
   - PowerShell
   - Azure Account
@@ -53,7 +56,9 @@ This demo ([demo-03.txt](https://github.com/themichaelbender/azure-cloud-shell/b
 
 #### Demo - Deploy Infrastructure as Code using Terraform from Docs
 
-This demo ([demo-04.txt](https://github.com/themichaelbender/azure-cloud-shell/blob/master/Scripts/demo-code/demo-4.txt))walks through deploying a Terraform configuration in Azure based on [Create a Terraform configuration for Azure](https://docs.microsoft.com/azure/terraform/terrafom-quickstart/?WT.mc_id=cloudshell-github-mibender) at docs.microsoft.com.
+This demo ([demo-04.txt](https://github.com/themichaelbender/azure-cloud-shell/blob/master/Scripts/demo-code/demo-4.txt))walks through deploying a Terraform configuration in Azure based on [Create a Terraform configuration for Azure](https://docs.microsoft.com/azure/terraform/terrafom-quickstart/?wt.mc_id=aznetdocs_pssummit_inperson_cnl_csainfra) at docs.microsoft.com.
+
+[Deploy a Hybrid Hub-and-spoke network with Azure Resource Manager Template](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=powershell?wt.mc_id=aznetdocs_pssummit_inperson_cnl_csainfra)
 
 [Video Link](https://youtu.be/CVbDg8ht5cw)
 
@@ -78,9 +83,9 @@ This demo ([demo-07.txt](https://github.com/themichaelbender/azure-cloud-shell/b
 
 [Raw Video from Azure Online Global Bootcamp 2019](https://www.youtube.com/watch?v=TKh1YgfCBmo)
 
-[Azure Cloud Shell Documentation](https://docs.microsoft.com/azure/cloud-shell/overview?WT.mc_id=cloudshell-github-mibender)
+[Azure Cloud Shell Documentation](https://docs.microsoft.com/azure/cloud-shell/overview?wt.mc_id=aznetdocs_pssummit_inperson_cnl_csainfra)
 
-[Create a Terraform configuration for Azure](https://docs.microsoft.com/azure/terraform/terrafom-quickstart/?WT.mc_id=cloudshell-github-mibender)
+[Create a Terraform configuration for Azure](https://docs.microsoft.com/azure/terraform/terrafom-quickstart/?wt.mc_id=aznetdocs_pssummit_inperson_cnl_csainfra)
 
 [Recorded Demos with Talk Track on YouTuber](https://www.youtube.com/playlist?list=PLA20gI1qp8YFk6peKW9M3v4_Be5t1Gw90)
 

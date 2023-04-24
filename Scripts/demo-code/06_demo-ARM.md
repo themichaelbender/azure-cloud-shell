@@ -1,6 +1,6 @@
     # Deployment of ARM Templates
 
-    # Reference Article : https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=powershell
+    # Reference Article : https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=powershell?wt.mc_id=aznetdocs_pssummit_inperson_cnl_csainfra
 
     # Run from Cloud Shell on doc
 

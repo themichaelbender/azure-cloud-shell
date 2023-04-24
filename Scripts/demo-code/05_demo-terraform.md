@@ -1,7 +1,7 @@
 # Terraform
 ## Create a VM in Azure with Terraform
 
-[Quickstart: Use Terraform to create a Linux VM](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-terraform)
+[Quickstart: Use Terraform to create a Linux VM](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-terraform?wt.mc_id=aznetdocs_pssummit_inperson_cnl_csainfra)
 
 ### Open in Bash
     

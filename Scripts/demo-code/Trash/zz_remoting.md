@@ -113,8 +113,14 @@ Invoke-AzVMCommand -Name $win -ResourceGroupName $rsg -ScriptBlock {Install-Wind
       exit
 
       #Disable Azure PSRemoting
-      Disable-AzVMPSRemoting -name $win -ResourceGroupName $rsg
+      
+      $win = 'myWinVM1' 
+      $lnx = 'mylinuxVM1'
+      $rsg = 'myDemoRG'
+      $cred = get-credential
+
+      Disable-AzVMPSRemoting -name 'mylinuxVM1' -ResourceGroupName 'myDemoRG'
       Disable-AzVMPSRemoting -name $lnx -ResourceGroupName $rsg
-      Enter-AzVM -name $win -ResourceGroupName $rsg -Credential $cred
+      Enter-AzVM -name 'mylinuxVM1' -ResourceGroupName $rsg -Credential $cred
       cls
 
